@@ -1,0 +1,13 @@
+{
+    "python.pythonPath": "irEnv/bin/python",
+    "python.autoComplete.extraPaths": [
+        "irEnv/bin/python"
+    ],
+    "python.linting.pylintArgs": [
+        "--init-hook",
+        "import sys; sys.path.append('irEnv/bin/python')"
+    ],
+    "python.linting.enabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.mypyEnabled": false
+}
