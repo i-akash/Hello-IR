@@ -2,6 +2,7 @@ from VectorSpaceModel import VectorSpaceModel as vsm
 from Document import Document
 from text_processing.DocumentProcessingTemplate import DocumentProcessingTemplate as dpt 
 from text_processing.QueryProcessingTemplate import QueryProcessingTemplate as qtp
+from score.TF_IDF import TF_IDF
 import numpy as np
 
 class VectorSpaceModelManager(object):
@@ -9,6 +10,7 @@ class VectorSpaceModelManager(object):
         self.vector_space_model=vsm()
         self.document_processor=dpt(self.vector_space_model)
         self.query_processor=qtp(self.vector_space_model)
+        self.tf_idf=TF_IDF()
 
 
     def add_doc(self,filename=""):
@@ -18,6 +20,10 @@ class VectorSpaceModelManager(object):
         document.set_vector(vector=vector)
         self.vector_space_model.add_doc(document)
     
+    def update_tf_df(self):
+        self.tf_idf.update_tf_idf_vector(self.vector_space_model)
+        print(self.vector_space_model.doc_list[0].get_tf_idf_vector())
+
     def isearch(self,query):
         query_vector=self.query_processor.process(query=query)
         doc_list=self.vector_space_model.get_doc()
@@ -36,10 +42,12 @@ class VectorSpaceModelManager(object):
     
 
 vsmm=VectorSpaceModelManager()
-
-
 vsmm.add_doc(filename='../docs/doc3.txt')
 vsmm.add_doc(filename='../docs/doc2.txt')
 vsmm.add_doc(filename='../docs/doc1.txt')
+
+vsmm.update_tf_df()
+
+
 vsmm.isearch(query="hasina")
 
