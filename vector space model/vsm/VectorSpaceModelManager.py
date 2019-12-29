@@ -59,6 +59,6 @@ vsmm.add_doc(filename='../docs/doc3.txt')
 vsmm.update_tf_df()
 
 print("-------------with tf idf--------------")
-vsmm.isearch_tfidf(query="Prime Minister Sheikh Hasina agreements two rivers men to be prepared")
+vsmm.isearch_tfidf(query="Prime Minister Sheikh Hasina today Bangladesh and India have 54 common Khandaker Mosharraf Hossain akash")
 print("-------------without tf idf--------------")
-vsmm.isearch(query="Prime Minister Sheikh Hasina agreements two rivers men to be prepared")
+vsmm.isearch(query="Prime Minister Sheikh Hasina today Bangladesh and India have 54 common Khandaker Mosharraf Hossain akash")
