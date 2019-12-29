@@ -15,9 +15,9 @@ class Cleaner:
     def get_clean(self,p_token_list=[]):
         l_token_list=list()
         for token in p_token_list:
-            if self.is_stop_word(p_token=token):
+            if self.__is_stop_word(p_token=token):
                 continue
-            token=self.get_stemize(p_token=token)
+            token=self.__get_stemize(p_token=token)
             l_token_list.append(token)
         
         return l_token_list
