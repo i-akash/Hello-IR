@@ -1,4 +1,4 @@
-# Hello-IR
+# Information Retrieval
 
 ##### Vector space model
 
